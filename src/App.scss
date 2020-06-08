@@ -1,0 +1,101 @@
+$background: #eee;
+$snow:#fff;
+$compareBack: rgba(127, 220, 199, 0.80);
+$border: #f8f8f8;
+$titr: #4f5761;
+$summary: #c4c4c4;
+$price: #60c6aa;
+.App {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.package-box {
+  background-color: $background;
+  padding: 10px 30px;
+  margin: auto;
+  max-width: 900px;
+  .row{
+    margin-bottom: 50px;
+  }
+  .box-item {
+    padding: 0 15px;
+    margin: 10px auto;
+    cursor: pointer;
+    .box-item_wrapper {
+      border: 1px solid;
+      border-color: $border;
+      border-radius: 2px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+      .compare-button{
+        position: absolute;
+        background-color: $compareBack;
+        top: 0;
+        left:-100%;
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: all 0.2s ease;
+        button{
+          background-color: transparent;
+          padding: 5px 25px;
+          text-transform: uppercase;
+          color: $snow;
+          border: 1px solid;
+          border-color:$snow;
+          margin: 50% auto;
+          font-size: 14px;
+        }
+      }
+      &:hover{
+        box-shadow: 0 10px 6px rgba(0,0,0,0.5);
+        .compare-button{
+          left: 0
+        }
+      }
+    }
+    .img-holder{
+      position: relative;
+      display: block;
+      overflow: hidden;
+      height: 200px;
+      img{
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .details-holder{
+      background-color: $snow;
+      padding: 10px 15px;
+      text-align: left;
+      text-transform: capitalize;
+      .title-box{
+        color: $titr;
+      }
+      .summary-box{
+        color: $summary;
+        font-size: 11px;
+      }
+      .price-box{
+        color: $price;
+        font-weight: bold;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+
+.table{
+  background-color: $snow;
+  border-radius: 5px;
+  tr>th,tr>td{
+    border: none;
+    border-bottom: 1px solid;
+    border-color: $border;
+  }
+  tr:not(:first-child)>th{
+    background-color: $border;
+  }
+}
